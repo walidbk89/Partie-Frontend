@@ -1,0 +1,36 @@
+
+
+<h2 class="text-primary text-center font-italic font-weight-bold"> Liste des Catégories</h2>
+
+<br>
+<div class="text-center col-md-10 mx-auto" style="width:100%">
+
+  <!-- <table datatable [dtOptions]="dtOptions" class="table table-striped"> -->
+    <table class="table table-striped" align="center" border="1" 
+    [ngStyle]="{'width' : '80%' }"> 
+    <thead>
+        <tr [ngStyle]="{'background-color':'black'}">
+    
+        <th [ngStyle]="{color:'#00FFFF'}">ID</th>
+        <th [ngStyle]="{color:'#00FFFF'}">Code</th>
+        <th [ngStyle]="{color:'#00FFFF'}">Libelle</th>
+        <th [ngClass]="{'text-success':true}" style="width: 160px;">Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+          <tr [ngStyle]="{'background-color':'Azure'}" *ngFor="let provider of providers">
+            <td [ngStyle]="{'font-family': 'Arial Black'}">{{provider.id}}</td>
+            <td>{{provider.code}}</td>
+            <td>{{provider.libelle}}</td>
+            
+          <td>
+            <button class="btn btn-primary btn-block " [ngStyle]="{'font-style': 'italic'}" (click)="updateProvider(provider)" >
+                <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Modifier</button>
+            <button class="btn btn-danger btn-block " [ngStyle]="{'font-style': 'italic'}"  (click)="deleteProvider(provider)"> 
+                <i class="fa fa-trash" aria-hidden="true"></i> Supprimer</button>
+          </td>
+        </tr>
+        </tbody>
+</table></div>

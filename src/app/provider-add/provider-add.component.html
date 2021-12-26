@@ -1,0 +1,22 @@
+<h2 class="text-primary text-center font-italic font-weight-bold">Ajout Catégorie</h2>
+
+<div class=" col-md-8 container-fluid">
+
+    <div class="row justify-content-center p-2">
+      <div class="col-10 col-sm-10 col-md-10 col-lg-6 col-xl-6">
+        <div class="card">
+          
+          <div class="card-body" [ngStyle]="{'background-color':'black'}">
+
+<form #myform="ngForm"  (ngSubmit)="createProvider(myform)"> 
+    <div class="form-group"> 
+        <label for="providerCode" class="font-weight-bold" [ngStyle]="{color:'#00FFFF'}">Code catégorie </label> 
+        <input ngModel name="providerCode" size="20" type="text" class="form-control" id="providerCode" />
+    </div> 
+    <div class="form-group"> 
+        <label for="providerLibelle" class="font-weight-bold" [ngStyle]="{color:'#00FFFF'}">Libelle catégorie </label> 
+        <input ngModel name="providerLibelle" size="20" type="text" class="form-control" id="providerLibelle"/> 
+    </div>
+        <button class="col-md-3 btn btn-success mt-2" [ngStyle]="{'font-style': 'italic'}"><i class="fa fa-check"></i>Ajouter</button> 
+</form>
+</div></div></div></div></div>

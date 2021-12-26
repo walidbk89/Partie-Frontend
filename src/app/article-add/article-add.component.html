@@ -1,0 +1,64 @@
+<h2 class="text-primary text-center font-italic font-weight-bold">Ajout Produit</h2>
+
+
+
+
+<div class=" col-md-12 container-fluid">
+
+  <div class="row justify-content-center p-2">
+    <div class="col-12 col-sm-12 col-md-10 col-lg-6 col-xl-6">
+      <div class="card">
+        <div class="card-body" [ngStyle]="{'background-color':'black'}">
+
+      <form #myform="ngForm" (ngSubmit)="createArticle(myform)">
+           
+        <div class="form-row">
+              
+              <div class="form-group col-md-4">
+                <label for="Code" class="font-weight-bold" [ngStyle]="{color:'#00FFFF'}">Code</label>
+                <input ngModel name="articleCode" size="20" type="text" class="form-control" id="Code" />
+              </div>
+              <div class="form-group col-md-4">
+                <label for="Marque" class="font-weight-bold" [ngStyle]="{color:'#00FFFF'}">Marque</label>
+                <input ngModel name="articleMarque" size="20" type="text" class="form-control" id="Marque" />
+              </div>
+              <div class="form-group col-md-4">
+                <label for="Modele" class="font-weight-bold" [ngStyle]="{color:'#00FFFF'}">Modele</label>
+                <input ngModel name="articleModele" size="20" type="text" class="form-control" id="Modele" />
+              </div>
+
+              <div class="form-group col-md-4">
+                <label for="Prix" class="font-weight-bold" [ngStyle]="{color:'#00FFFF'}">Prix</label>
+                <input ngModel name="articlePrix" size="20" type="text" class="form-control" id="Prix" />
+              </div>
+
+              <div class="form-group col-md-4">
+                <label for="Quantité" class="font-weight-bold" [ngStyle]="{color:'#00FFFF'}">Quantité</label>
+                <input ngModel name="articleQte" size="20" type="text" class="form-control" id="Quantité" />
+              </div>
+
+              <div class="form-group col-md-4">
+                <label for="providerLibelle" class="font-weight-bold" [ngStyle]="{color:'#00FFFF'}">Catégorie</label>
+                <br> <select ngModel name="providerId" id="providerId" class="form-select"
+                  [ngStyle]="{'width' : '100%', 'height' : '40px'}">
+                  <option value="">Select Catégorie </option>
+                  <option *ngFor="let unProvider of listProvider" value="{{unProvider.id}} "
+                    [ngStyle]="{'font-family': 'Arial Black'}">{{unProvider.libelle}}</option>
+                </select>
+              </div>
+
+         </div>
+
+                <div class="fixed text-center">
+                  <button class="col-md-3 btn btn-success mr-2" [ngStyle]="{'font-style': 'italic'}"><i class="fa fa-check"></i> Ajouter</button>
+                </div>
+
+      
+       </form>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

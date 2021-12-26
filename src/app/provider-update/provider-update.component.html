@@ -1,0 +1,22 @@
+<h2 class="text-primary text-center font-italic font-weight-bold">Modif Catégorie</h2>
+
+<div class=" col-md-8 container-fluid">
+
+    <div class="row justify-content-center p-2">
+      <div class="col-10 col-sm-10 col-md-10 col-lg-6 col-xl-6">
+        <div class="card">
+          
+          <div class="card-body" [ngStyle]="{'background-color':'black'}">
+            <form (ngSubmit)="updateProvider()">
+                <div class="form-group">
+                  <label for="providerCode" [ngStyle]="{color:'#00FFFF'}">Code Catégorie</label>
+                  <input [(ngModel)]="code" name="providerCode" size="20" type="text" class="form-control" id="providerCode" />
+                </div>
+                <div class="form-group">
+                  <label for="providerLibelle" [ngStyle]="{color:'#00FFFF'}">Libelle Catégorie</label>
+                  <input [(ngModel)]="libelle" name="providerLibelle" size="20" type="text" class="form-control" id="providerLibelle" />
+                </div>
+                <input [(ngModel)]="id" name="providerId" type="hidden" />
+                 <button class=" btn btn-success mt-2" [ngStyle]="{'font-style': 'italic'}"><i class="fa fa-check"></i> Modifier</button> 
+              </form>
+</div></div></div></div></div>

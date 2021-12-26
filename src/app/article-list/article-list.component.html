@@ -1,0 +1,38 @@
+<h2 class="text-primary text-center font-italic font-weight-bold"> Liste des Produits</h2>
+
+<table class="table table-striped" align="center" border="1" 
+        [ngStyle]="{'width' : '80%' }"> 
+ 
+    <thead>
+        <tr [ngStyle]="{'background-color':'black'}">
+    
+        <th [ngStyle]="{color:'#00FFFF'}">ID</th>
+        <th [ngStyle]="{color:'#00FFFF'}">Code</th>
+        <th [ngStyle]="{color:'#00FFFF'}">Marque</th>
+        <th [ngStyle]="{color:'#00FFFF'}">Modele</th>
+        <th [ngStyle]="{color:'#00FFFF'}">Prix</th>
+        <th [ngStyle]="{color:'#00FFFF'}">Quantité</th>
+        <th [ngStyle]="{color:'#00FFFF'}">Catégorie</th>
+        <th [ngClass]="{'text-success':true}" style="width: 160px;">Actions</th>
+        </tr>
+    </thead> 
+
+    <tbody>
+
+          <tr [ngStyle]="{'background-color':'Azure'}" *ngFor="let article of articles">
+            <td [ngStyle]="{'font-family': 'Arial Black'}">{{article.id}}</td>
+            <td>{{article.code}}</td>
+            <td>{{article.marque}}</td>
+            <td>{{article.modele}}</td>
+            <td>{{article.prix}}</td>
+            <td>{{article.qte}}</td>
+            <td>{{article.provider.libelle}}</td>
+          <td>
+            <button class="btn btn-primary btn-block " [ngStyle]="{'font-style': 'italic'}" (click)="updateArticle(article)" >
+                <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Modifier</button>
+            <button class="btn btn-danger btn-block " [ngStyle]="{'font-style': 'italic'}"  (click)="deleteArticle(article)"> 
+                <i class="fa fa-trash" aria-hidden="true"></i> Supprimer</button>
+          </td>
+        </tr>
+        </tbody>
+</table>
